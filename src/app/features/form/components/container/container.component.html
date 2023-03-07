@@ -22,10 +22,12 @@
       <textarea formControlName="description" matInput></textarea>
       <mat-error>A description is required</mat-error>
     </mat-form-field>
-    <img class="contain" *ngIf="form.get('image').value" [src]="form.get('image').value">
-    <input #inputFile type="file" [style.display]="'none'" (change)="readUrl(inputFile)" accept="image/png, image/jpeg">
-    <button class="col-md-12" type="button" class="file-add" mat-stroked-button
-      (click)="inputFile.click()">Afbeelding</button>
+    <div class="col-12">
+      <img class="contain" *ngIf="form.get('image').value" [src]="form.get('image').value">
+      <input #inputFile type="file" [style.display]="'none'" (change)="readUrl(inputFile)"
+        accept="image/png, image/jpeg">
+      <button type="button" class="file-add" mat-stroked-button (click)="inputFile.click()">Image</button>
+    </div>
   </div>
   <div class="actions">
     <a class="col-md-3" color="warn" mat-raised-button [routerLink]="['/']">Cancel</a>
