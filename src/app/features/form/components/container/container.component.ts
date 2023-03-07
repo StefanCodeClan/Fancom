@@ -16,11 +16,11 @@ export class ContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      title: this.fb.control(String, Validators.required),
-      author: this.fb.control(String, Validators.required),
+      title: this.fb.control('', Validators.required),
+      author: this.fb.control('', Validators.required),
       publicationDate: this.fb.control(Date, Validators.required),
-      description: this.fb.control(String, Validators.required),
-      image: this.fb.control(String),
+      description: this.fb.control('', Validators.required),
+      image: this.fb.control(''),
     });
   }
 
