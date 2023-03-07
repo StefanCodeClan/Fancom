@@ -7,7 +7,7 @@ import {Observable, of} from 'rxjs';
 import {TEST_BOOKS} from '../../../utils/testing/books.test.util';
 import {IBook} from '../../../utils/types/book.types';
 import {BooksService} from '../../services/books.service';
-import {AddBook, GetBooks, SetBooks} from './books.actions';
+import {AddBook, CreateBook, GetBooks, SetBooks} from './books.actions';
 import {BooksEffects} from './books.effects';
 import {adapter, initialState} from './books.model';
 import {BooksReducer} from './books.reducer';
@@ -105,24 +105,19 @@ describe('BooksStore', () => {
         });
       });
     });
-    /*
     describe(CreateBook.type, () => {
-      let addBookSpy;
       beforeEach(() => {
-        addBookSpy = booksServiceSpy.addBook.mockImplementation(() => of(book));
-        addBookSpy(book);
+        booksServiceSpy.addBook.mockImplementation(() => of({...book, id: '1234'}));
       });
       it('should call add book in service', done => {
         actions$ = of(CreateBook({data: book}));
         effects.createBook$.subscribe(action => {
-          expect(action).toEqual({
-            type: AddBook.type,
-          });
+          console.log(action);
+          expect(action.type).toEqual(AddBook.type);
           done();
         });
       });
     });
-    */
     afterEach(() => {
       jest.clearAllMocks();
     });
