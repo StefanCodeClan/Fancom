@@ -1,0 +1,35 @@
+<form class="container" [formGroup]="form" (ngSubmit)="submit()">
+  <div class="row">
+    <mat-form-field class="col-6">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" name="title">
+      <mat-error>A title is required</mat-error>
+    </mat-form-field>
+    <mat-form-field class="col-6">
+      <mat-label>Author</mat-label>
+      <input matInput formControlName="author" name="author">
+      <mat-error>An author is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-6">
+      <mat-label>Publication Date</mat-label>
+      <input matInput formControlName="publicationDate" [matDatepicker]="picker">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error>The publication date is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-6">
+      <mat-label>Description</mat-label>
+      <textarea formControlName="description" matInput></textarea>
+      <mat-error>A description is required</mat-error>
+    </mat-form-field>
+    <img class="contain" *ngIf="form.get('image').value" [src]="form.get('image').value">
+    <input #inputFile type="file" [style.display]="'none'" (change)="readUrl(inputFile)" accept="image/png, image/jpeg">
+    <button class="col-md-12" type="button" class="file-add" mat-stroked-button
+      (click)="inputFile.click()">Afbeelding</button>
+  </div>
+  <div class="actions">
+    <a class="col-md-3" color="warn" mat-raised-button [routerLink]="['/']">Cancel</a>
+    <span style="flex: 1 1 auto;"></span>
+    <button class="col-md-3" mat-raised-button type="submit" [disabled]="form.invalid">Add</button>
+  </div>
+</form>

@@ -1,0 +1,15 @@
+<mat-card *ngIf="book$ | async; let book" appearance="raised">
+  <mat-card-header>
+    <mat-card-title>{{book.title}}</mat-card-title>
+    <mat-card-subtitle class="author">{{book.author}}</mat-card-subtitle>
+    <mat-card-subtitle>{{book.publicationDate | date:'longDate'}}</mat-card-subtitle>
+  </mat-card-header>
+  <img class="contain" mat-card-image [src]="book.image ?? 'assets/images/book-cover-placeholder.png'"
+    [alt]="book.title">
+  <mat-card-content>
+    <p>
+      {{book.description}}
+    </p>
+  </mat-card-content>
+
+</mat-card>

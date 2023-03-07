@@ -1,0 +1,19 @@
+mat {
+  &-card {
+    margin-top: 20px;
+    &-subtitle {
+      &.author {
+        font-weight: 700;
+      }
+    }
+    &-content {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.contain {
+  max-height: 300px;
+  object-fit: contain;
+}

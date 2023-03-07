@@ -1,0 +1,59 @@
+{
+  "books": [{
+      "id": "9789044650853",
+      "title": "Doe zelf normaal",
+      "author": "Maxim Februari",
+      "description": "Onder invloed van de klimaatverandering en intelligente technologieën verandert de democratische rechtsstaat. Natuur en technologie sturen het beleid en nemen beslissingen voor ons. Het is de vraag of we zelf ons gedrag nog kunnen blijven normeren.",
+      "publicationDate": "2023-02-16T23:00:00.000Z",
+      "image": "https://images.mind-books.nl/libris/book/cover/9789044650853"
+    },
+    {
+      "id": "9789463361606",
+      "title": "Lessen",
+      "author": "Ian McEwan",
+      "description": "Als de wereld nog steeds te kampen heeft met de gevolgen van de Tweede Wereldoorlog en het IJzeren Gordijn een feit is, wordt de 11-jarige Roland door zijn ouders ondergebracht op een Engelse kostschool.",
+      "publicationDate": "2023-01-19T23:00:00.000Z",
+      "image": "https://images.mind-books.nl/libris/book/cover/9789463361606"
+    },
+    {
+      "id": "9789043926430",
+      "title": "De Zoete Zusjes moppenboek 2",
+      "author": "Hanneke de Zoete",
+      "description": "Elke dag lachen, gieren, brullen met 365 nieuwe leukste moppen",
+      "publicationDate": "2015-03-25T00:00:00.000Z",
+      "image": "https://images.mind-books.nl/libris/book/cover/9789043926430"
+    },
+    {
+      "id": "9789046830703",
+      "title": "Shuggie Bain",
+      "author": "Douglas Stuart",
+      "description": "Hugh 'Shuggie' Bain brengt in de jaren tachtig zijn jeugd door in een vervallen sociale huurwoning in Glasgow. Agnes, zijn moeder, is alles voor Shuggie. Zij behoudt haar trots door er altijd goed uit te zien. Toch zoekt ze steeds vaker troost in drank.",
+      "publicationDate": "2021-01-11T23:00:00.000Z",
+      "image": "https://images.mind-books.nl/libris/book/cover/9789046830703"
+    },
+    {
+      "id": "9789044361650",
+      "title": "Daar waar de rivierkreeften zingen",
+      "author": "Delia Owens",
+      "description": "Kya Clark is in haar eentje opgegroied in het moeras van Barkley Cove in North Carolina, afgesloten van de bewoonde wereld. Om zichzelf te onderhouden ruilt ze vis, en groenten uit haar moestuin voor andere levensmiddelen.",
+      "publicationDate": "2021-01-11T23:00:00.000Z",
+      "image": "https://images.mind-books.nl/libris/book/cover/9789044361650"
+    },
+    {
+      "id": "9789022598108",
+      "title": "Lichtpunt",
+      "author": "Corina Bomann",
+      "description": "Via het leven en de liefdes van het personeel van het Waldfriede-ziekenhuis komt dertig jaar Berlijnse geschiedenis tot leven.",
+      "publicationDate": "2023-02-20T23:00:00.000Z",
+      "image": "https://images.mind-books.nl/libris/book/cover/9789022598108"
+    },
+    {
+      "id": "9789401489614",
+      "title": "Vertroostingen",
+      "author": "Dirk De Wachter",
+      "description": "Als dokter ben je opgeleid om mensen in moeilijke situaties bij te staan, ze te gidsen en een helpende hand te bieden.",
+      "publicationDate": "2022-12-05T23:00:00.000Z",
+      "image": "https://images.mind-books.nl/libris/book/cover/9789401489614"
+    }
+  ]
+}

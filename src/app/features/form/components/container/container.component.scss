@@ -1,0 +1,19 @@
+.actions {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  margin-top: 20px;
+  &-button {
+    max-width: 25%;
+  }
+}
+
+img {
+  &.contain {
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+}
