@@ -112,8 +112,7 @@ describe('BooksStore', () => {
       it('should call add book in service', done => {
         actions$ = of(CreateBook({data: book}));
         effects.createBook$.subscribe(action => {
-          console.log(action);
-          expect(action.type).toEqual(AddBook.type);
+          expect(action).toEqual({type: AddBook.type, data: {...book, id: '1234'}});
           done();
         });
       });

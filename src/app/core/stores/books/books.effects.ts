@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType, OnInitEffects} from '@ngrx/effects';
 import {Action} from '@ngrx/store';
-import {catchError, EMPTY, exhaustMap, map, Observable, tap} from 'rxjs';
+import {catchError, EMPTY, exhaustMap, map, Observable} from 'rxjs';
 import {v4 as uuidv4} from 'uuid';
 import {IBook} from '../../../utils/types/book.types';
 import {BooksService} from '../../services/books.service';
@@ -38,7 +38,6 @@ export class BooksEffects implements OnInitEffects {
         })),
         exhaustMap(book =>
           this.booksService.addBook(book).pipe(
-            tap(console.log),
             map(data => AddBook({data})),
             catchError(() => EMPTY)
           )
