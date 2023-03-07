@@ -3,20 +3,30 @@ import {provideMockActions} from '@ngrx/effects/testing';
 import {EntityState} from '@ngrx/entity';
 import {Action} from '@ngrx/store';
 import {provideMockStore} from '@ngrx/store/testing';
-import {MockProvider} from 'ng-mocks';
 import {Observable, of} from 'rxjs';
 import {TEST_BOOKS} from '../../../utils/testing/books.test.util';
 import {IBook} from '../../../utils/types/book.types';
 import {BooksService} from '../../services/books.service';
-import {AddBook, SetBooks} from './books.actions';
+import {AddBook, GetBooks, SetBooks} from './books.actions';
 import {BooksEffects} from './books.effects';
 import {adapter, initialState} from './books.model';
 import {BooksReducer} from './books.reducer';
 import {getBookById, getBooksIds} from './books.selectors';
-
+const book: IBook = {
+  id: '',
+  title: 'title 3',
+  author: 'author 3',
+  description: '',
+  publicationDate: new Date().toISOString(),
+  image: '',
+};
 describe('BooksStore', () => {
   let effects: BooksEffects;
   let actions$ = new Observable<Action>();
+  const booksServiceSpy = {
+    getBooks: jest.fn(),
+    addBook: jest.fn(),
+  };
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -27,10 +37,7 @@ describe('BooksStore', () => {
         provideMockActions(() => actions$),
         {
           provide: BooksService,
-          useValue: MockProvider(BooksService, {
-            getBooks: () => of(TEST_BOOKS),
-            addBook: () => of(),
-          }),
+          useValue: booksServiceSpy,
         },
         BooksEffects,
       ],
@@ -79,12 +86,14 @@ describe('BooksStore', () => {
       expect(state).not.toBe(initialState);
     });
   });
-  /*
   describe('effects', () => {
     beforeEach(() => {
       effects = TestBed.inject<BooksEffects>(BooksEffects);
     });
     describe(SetBooks.type, () => {
+      beforeEach(() => {
+        booksServiceSpy.getBooks.mockReturnValue(of(TEST_BOOKS));
+      });
       it('should call the api on dispatch', done => {
         actions$ = of({type: GetBooks.type});
         effects.getBooks$.subscribe(action => {
@@ -96,25 +105,26 @@ describe('BooksStore', () => {
         });
       });
     });
+    /*
     describe(CreateBook.type, () => {
+      let addBookSpy;
+      beforeEach(() => {
+        addBookSpy = booksServiceSpy.addBook.mockImplementation(() => of(book));
+        addBookSpy(book);
+      });
       it('should call add book in service', done => {
-        const book: IBook = {
-          id: '',
-          title: 'title 3',
-          author: 'author 3',
-          description: '',
-          publicationDate: new Date().toISOString(),
-          image: '',
-        };
         actions$ = of(CreateBook({data: book}));
         effects.createBook$.subscribe(action => {
           expect(action).toEqual({
-            type: CreateBook.type,
+            type: AddBook.type,
           });
           done();
         });
       });
     });
+    */
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
   });
-  */
 });
