@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "ng serve",
     "start:mock": "json-server --watch environments/development/db.json --port 3000",
     "start:dev": "run-p start start:mock",

@@ -37,6 +37,6 @@ export class ContainerComponent implements OnInit {
       const control: AbstractControl<string> = this.form.get('image')!;
       control.patchValue(reader.result as string);
     };
-    !!file ? reader.readAsDataURL(file) : null;
+    file ? reader.readAsDataURL(file) : null;
   }
 }

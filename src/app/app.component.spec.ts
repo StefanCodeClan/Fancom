@@ -20,7 +20,7 @@ describe('AppComponent', () => {
   it('should navigate to /add', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    let href = fixture.debugElement.query(By.css('a.add')).nativeElement.getAttribute('href');
+    const href = fixture.debugElement.query(By.css('a.add')).nativeElement.getAttribute('href');
     expect(href).toEqual('/add');
   });
 });
