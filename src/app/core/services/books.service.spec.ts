@@ -1,7 +1,7 @@
 import {TestBed} from '@angular/core/testing';
 
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import {TEST_BOOK, TEST_BOOKS} from '../../utils/testing/books.test.util';
+import {TEST_BOOK, TEST_BOOKS} from '../../utils/test/books.test.util';
 import {APIURL} from '../../utils/tokens/api-url.token';
 import {BooksService} from './books.service';
 

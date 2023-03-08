@@ -4,7 +4,7 @@ import {EntityState} from '@ngrx/entity';
 import {Action} from '@ngrx/store';
 import {provideMockStore} from '@ngrx/store/testing';
 import {Observable, of} from 'rxjs';
-import {TEST_BOOK, TEST_BOOKS} from '../../../utils/testing/books.test.util';
+import {TEST_BOOK, TEST_BOOKS} from '../../../utils/test/books.test.util';
 import {IBook} from '../../../utils/types/book.types';
 import {BooksService} from '../../services/books.service';
 import {AddBook, CreateBook, GetBooks, SetBooks} from './books.actions';

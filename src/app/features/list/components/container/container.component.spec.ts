@@ -1,7 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {MockStore, provideMockStore} from '@ngrx/store/testing';
 import {MockComponent} from 'ng-mocks';
-import {BOOKS_TEST_STATE, TEST_BOOKS} from '../../../../utils/testing/books.test.util';
+import {BOOKS_TEST_STATE, TEST_BOOKS} from '../../../../utils/test/books.test.util';
 import {ViewComponent} from '../view/view.component';
 import {ContainerComponent} from './container.component';
 
