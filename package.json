@@ -11,6 +11,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest --no-cache",
     "test:watch": "jest --no-cache --watch",
+    "test:coverage": "jest --coverage",
     "lint": "ng lint"
   },
   "private": true,
