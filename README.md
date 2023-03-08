@@ -12,7 +12,7 @@ Run `npm run start:dev` for a dev server. Navigate to `http://localhost:4200/`. 
 
 - [Core] which includes core services and stores.
 - [Features] A overview with books and a module to create a new book.
-- [Utils] Interfaces, tokes and test-utils which is needed.
+- [Utils] Interfaces, tokens and test utils which are needed.
 
 ### Core Dependencies
 
@@ -23,6 +23,11 @@ Run `npm run start:dev` for a dev server. Navigate to `http://localhost:4200/`. 
 
 - [Prettier]
 - [ESLint]
+
+### Code Testing
+
+- [JEST]
+- [ng-mocks]
 
 ## Build
 
