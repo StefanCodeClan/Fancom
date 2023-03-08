@@ -1,6 +1,15 @@
 import {BOOKS_STORE_TOKEN} from '../../core/stores/books/books.model';
 import {IBook} from '../types/book.types';
 
+export const TEST_BOOK: IBook = {
+  id: '3',
+  title: 'title 3',
+  author: 'author 3',
+  description: '',
+  publicationDate: new Date().toISOString(),
+  image: '',
+};
+
 export const TEST_BOOKS: IBook[] = [
   {
     id: '1',

@@ -1,7 +1,7 @@
 import {TestBed} from '@angular/core/testing';
 
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import {TEST_BOOKS} from '../../utils/testing/books.test.util';
+import {TEST_BOOK, TEST_BOOKS} from '../../utils/testing/books.test.util';
 import {APIURL} from '../../utils/tokens/api-url.token';
 import {BooksService} from './books.service';
 
@@ -37,8 +37,8 @@ describe('BooksService', () => {
 
   describe('addBook', () => {
     it('should return an Observable<IBook>', () => {
-      const res = {id: 'test'};
-      service.addBook(TEST_BOOKS[0]).subscribe(book => {
+      const res = {id: 'test', ...TEST_BOOK};
+      service.addBook(TEST_BOOK).subscribe(book => {
         expect(book).toEqual(res);
       });
 

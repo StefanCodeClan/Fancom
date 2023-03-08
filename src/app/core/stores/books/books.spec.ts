@@ -4,7 +4,7 @@ import {EntityState} from '@ngrx/entity';
 import {Action} from '@ngrx/store';
 import {provideMockStore} from '@ngrx/store/testing';
 import {Observable, of} from 'rxjs';
-import {TEST_BOOKS} from '../../../utils/testing/books.test.util';
+import {TEST_BOOK, TEST_BOOKS} from '../../../utils/testing/books.test.util';
 import {IBook} from '../../../utils/types/book.types';
 import {BooksService} from '../../services/books.service';
 import {AddBook, CreateBook, GetBooks, SetBooks} from './books.actions';
@@ -12,14 +12,7 @@ import {BooksEffects} from './books.effects';
 import {adapter, initialState} from './books.model';
 import {BooksReducer} from './books.reducer';
 import {getBookById, getBooksIds} from './books.selectors';
-const book: IBook = {
-  id: '',
-  title: 'title 3',
-  author: 'author 3',
-  description: '',
-  publicationDate: new Date().toISOString(),
-  image: '',
-};
+
 describe('BooksStore', () => {
   let effects: BooksEffects;
   let actions$ = new Observable<Action>();
@@ -107,12 +100,12 @@ describe('BooksStore', () => {
     });
     describe(CreateBook.type, () => {
       beforeEach(() => {
-        booksServiceSpy.addBook.mockImplementation(() => of({...book, id: '1234'}));
+        booksServiceSpy.addBook.mockImplementation(() => of(TEST_BOOK));
       });
       it('should call add book in service', done => {
-        actions$ = of(CreateBook({data: book}));
+        actions$ = of(CreateBook({data: TEST_BOOK}));
         effects.createBook$.subscribe(action => {
-          expect(action).toEqual({type: AddBook.type, data: {...book, id: '1234'}});
+          expect(action).toEqual({type: AddBook.type, data: TEST_BOOK});
           done();
         });
       });
